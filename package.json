@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "description": "This is a training project for yandex praktikum, messenger with different functions.",
   "browserslist": {
-      "production": [
-          ">0.2%",
-          "not dead",
-          "not op_mini all"
-      ],
-      "development": [
-          "last 1 chrome version",
-          "last 1 firefox version",
-          "last 1 safari version"
-      ]
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "scripts": {
     "start": "parcel build src/pages/**/*.hbs --no-cache && node ./server.js",
@@ -32,11 +32,11 @@
     "node": ">=12.0.0"
   },
   "devDependencies": {
-    "@anikin/parcel-transformer-handlebars": "^1.0.9",
-    "express": "^4.18.1",
-    "parcel": "^2.7.0",
-    "postcss": "^8.4.16",
-    "postcss-import": "^15.0.0",
-    "postcss-nested": "^5.0.6"
+    "@anikin/parcel-transformer-handlebars": "1.0.9",
+    "express": "4.18.1",
+    "parcel": "2.7.0",
+    "postcss": "8.4.16",
+    "postcss-import": "14.1.0",
+    "postcss-nested": "5.0.6"
   }
 }
