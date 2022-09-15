@@ -1,0 +1,119 @@
+@import "./fonts.css";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    writing-mode: lr-tb;
+}
+
+html,
+body {
+    font-family: 'Inter';
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    color: #000000;
+}
+
+button,
+input {
+    border: none;
+    background-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #1E1E1E;
+}
+
+ul {
+    list-style: none;
+}
+
+.auth-pages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__login {
+        margin-top: 197px;
+    }
+
+    &__signup {
+        margin-top: 89px;
+    }
+}
+
+.main-app {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    &__left-column {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        border-right: 1px solid #F3F3F3;
+    }
+
+    &__right-column {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+    }
+
+    &__chats-list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.profile-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #F8F8F8;
+}
+
+.error-pages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 304px;
+    }
+
+    &__h1 {
+        font-weight: 400;
+        font-size: 100px;
+        line-height: 100px;
+        color: rgba(0, 0, 0, .6);
+    }
+
+    &__h3 {
+        margin-top: 24px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 20px;
+        color: rgba(0, 0, 0, .6);
+    }
+}

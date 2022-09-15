@@ -1,0 +1,42 @@
+.profile-block {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 16px 0;
+    background-color: #FFFFFF;
+
+    &__left-part, &__right-part {
+        display: flex;
+    }
+
+    &__text-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 12px;
+    }
+
+    &__username {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    &__profile-link {
+        font-size: 12px;
+        line-height: 16px;
+        color: #6A6A6A;
+
+        &:visited, &:active, &:focus {
+            color: #6A6A6A;
+        }
+    }
+
+    &__right-part {
+        align-items: center;
+    }
+
+    &__button {
+        display: flex;
+    }
+}

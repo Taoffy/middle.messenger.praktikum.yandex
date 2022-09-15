@@ -1,0 +1,28 @@
+.profile-input {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EAEAEA;
+
+    &__heading {
+        font-size: 13px;
+        line-height: 13px;
+    }
+
+    &__input {
+        font-size: 13px;
+        line-height: 13px;
+        text-align: right;
+        color: #999999;
+        width: 50%;
+    }
+
+    &:not(:first-child) {
+        margin-top: 16px;
+    }
+
+    &--without-border {
+        border-bottom: none;
+    }
+}

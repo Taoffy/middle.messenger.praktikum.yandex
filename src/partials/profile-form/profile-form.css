@@ -1,0 +1,9 @@
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 414px;
+    padding: 32px;
+    border-radius: 32px;
+    background-color: #FFFFFF;
+}

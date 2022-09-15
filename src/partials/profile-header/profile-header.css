@@ -1,0 +1,24 @@
+.profile-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 16px;
+    background-color: #FFFFFF;
+
+    &__link {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 18px;
+        color: #469BFF;
+
+        &:visited, &:active, &:focus {
+            color: #469BFF;
+        }
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 18px;
+        text-align: center;
+    }
+}
