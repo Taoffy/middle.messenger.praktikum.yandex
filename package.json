@@ -15,8 +15,8 @@
     ]
   },
   "scripts": {
-    "start": "parcel build src/pages/**/*.hbs --no-cache && node ./server.js",
-    "dev": "parcel src/pages/**/*.hbs --no-cache"
+    "start": "parcel build src/pages/**/*.hbs src/pages/index.hbs --no-cache && node ./server.js",
+    "dev": "parcel src/pages/**/*.hbs src/pages/index.hbs --no-cache"
   },
   "repository": {
     "type": "git",
