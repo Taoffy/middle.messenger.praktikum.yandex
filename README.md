@@ -1,8 +1,8 @@
 # Pet-project messenger
 
-[Netlify](https://zesty-melomakarona-d79d60.netlify.app/)
-[Pull-request](https://github.com/Taoffy/middle.messenger.praktikum.yandex/pull/1)
-[Figma design](https://www.figma.com/file/9cLr7G2sR1iPZ4uOGfVfiR/Messenger?node-id=0%3A1)
+- [Netlify](https://zesty-melomakarona-d79d60.netlify.app/)
+- [Pull-request](https://github.com/Taoffy/middle.messenger.praktikum.yandex/pull/1)
+- [Figma design](https://www.figma.com/file/9cLr7G2sR1iPZ4uOGfVfiR/Messenger?node-id=0%3A1)
 
 In this project I'm using [Handlebars](https://handlebarsjs.com/) and [Parcel](https://parceljs.org/).
 
