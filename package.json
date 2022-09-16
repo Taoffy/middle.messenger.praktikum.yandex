@@ -1,7 +1,7 @@
 {
-  "name": "messenger-yandex-praktikum",
+  "name": "pet-project-messenger",
   "version": "1.0.0",
-  "description": "This is a training project for yandex praktikum, messenger with different functions.",
+  "description": "This is a training project for yandex praktikum, messenger with various functions.",
   "browserslist": {
     "production": [
       ">0.2%",
