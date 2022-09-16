@@ -2,18 +2,7 @@
   "name": "pet-project-messenger",
   "version": "1.0.0",
   "description": "This is a training project for yandex praktikum, messenger with various functions.",
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": ">0.2%, not dead, not op_mini all",
   "scripts": {
     "start": "parcel build src/pages/**/*.hbs src/pages/index.hbs --no-cache && node ./server.js",
     "dev": "parcel src/pages/**/*.hbs src/pages/index.hbs --no-cache"
