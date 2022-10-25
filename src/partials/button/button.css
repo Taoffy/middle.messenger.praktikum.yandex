@@ -5,12 +5,12 @@
     width: 100%;
     padding: 21px 0;
     margin-top: 24px;
-    background-color: #469BFF;
+    background-color: var(--color-blue);
     border-radius: 12px;
     font-size: 12px;
     font-weight: 800;
     line-height: 14px;
-    color: #ffffff;
+    color: var(--color-white);
 
     &--uppercase {
         text-transform: uppercase;

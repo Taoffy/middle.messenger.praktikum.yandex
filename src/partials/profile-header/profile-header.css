@@ -2,16 +2,16 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 16px;
-    background-color: #FFFFFF;
+    background-color: var(--color-white);
 
     &__link {
         font-weight: 600;
         font-size: 18px;
         line-height: 18px;
-        color: #469BFF;
+        color: var(--color-blue);
 
         &:visited, &:active, &:focus {
-            color: #469BFF;
+            color: var(--color-blue);
         }
     }
 

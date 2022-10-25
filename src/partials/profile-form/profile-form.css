@@ -5,5 +5,5 @@
     max-width: 414px;
     padding: 32px;
     border-radius: 32px;
-    background-color: #FFFFFF;
+    background-color: var(--color-white);
 }

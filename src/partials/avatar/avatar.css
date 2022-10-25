@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 80px;
-    background-color: #FFFFFF;
+    background-color: var(--color-white);
 
     &--s {
         width: 32px;
