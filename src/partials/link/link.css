@@ -1,0 +1,19 @@
+.link {
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--color-blue);
+    text-align: center;
+
+    &--uppercase {
+        text-transform: uppercase;
+    }
+
+    &--font-weight-500 {
+        font-weight: 500;
+    }
+
+    &:visited, &:active, &:focus {
+        color: var(--color-blue);
+    }
+}

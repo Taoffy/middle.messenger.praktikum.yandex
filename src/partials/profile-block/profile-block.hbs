@@ -1,0 +1,14 @@
+<div class="profile-block">
+    <div class="profile-block__left-part">
+        {{> avatar/avatar size=size src=avatarSrc alt=avatarAlt}}
+        <div class="profile-block__text-block">
+            <span class="profile-block__username">{{username}}</span>
+            <a class="profile-block__profile-link" href="{{profile_link}}">Profile</a>
+        </div>
+    </div>
+    <div class="profile-block__right-part">
+        <button class="profile-block__button">
+            <img src="../../../static/img/create-icon.svg" alt="create button" />
+        </button>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+---
+styles:
+    - './login.css'
+---
+
+{{!< layout}}
+
+<main class="auth-pages auth-pages__login">
+    <h3 class="login__heading">Sign in</h3>
+    <form class="login__form">
+        {{> input/input name="login" placeholder="LOGIN" type="text"}}
+        {{> input/input name="password" placeholder="PASSWORD" type="password"}}
+        {{> button/button text="Sign in" type="button" uppercase=true}}
+        {{> link/link text="Sign up" link="../signup/signup.hbs" uppercase=true marginTop="24px"}}
+    </form>
+</main>
