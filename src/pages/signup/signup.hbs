@@ -1,20 +1,10 @@
 ---
 styles:
     - './signup.css'
+scripts:
+    - './index.ts'
 ---
 
 {{!< layout}}
 
-<main class="auth-pages auth-pages__signup">
-    <h3 class="signup__heading">Sign up</h3>
-    <form class="signup__form">
-        {{> input/input name="email" placeholder="EMAIL" type="email"}}
-        {{> input/input name="login" placeholder="LOGIN" type="text"}}
-        {{> input/input name="first_name" placeholder="FIRST NAME" type="text"}}
-        {{> input/input name="second_name" placeholder="LAST NAME" type="text"}}
-        {{> input/input name="phone" placeholder="PHONE" type="tel" pattern="[0-9]{10}"}}
-        {{> input/input name="password" placeholder="PASSWORD" type="password"}}
-        {{> button/button text="Sign up" type="button"}}
-        {{> link/link text="Sign in" link="../login/login.hbs" uppercase=true marginTop="24px"}}
-    </form>
-</main>
+<div id="root"></div>

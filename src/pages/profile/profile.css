@@ -1,6 +1,6 @@
-@import '../../partials/profile-header/profile-header.css';
-@import '../../partials/profile-form/profile-form.css';
-@import '../../partials/profile-input/profile-input.css';
+@import url("../../partials/profile-header/profile-header.css");
+@import url("../../css/components/profile-form.css");
+@import url("../../partials/profile-input/profile-input.css");
 
 .profile {
     display: flex;
@@ -23,11 +23,11 @@
         justify-content: center;
         position: relative;
         padding: 36px 39px;
-        background-color: #EFEFEF;
+        background-color: #efefef;
         border-radius: 100px;
 
         &:hover {
-            outline: 1px solid #000000;
+            outline: 1px solid #000;
         }
     }
 
@@ -41,7 +41,6 @@
         position: absolute;
         bottom: 0;
         right: 0;
-
     }
 
     &__avatar-input {
@@ -69,26 +68,30 @@
         padding-bottom: 10px;
 
         &:not(:last-child) {
-            border-bottom: 1px solid #EAEAEA;
+            border-bottom: 1px solid #eaeaea;
         }
 
         &:not(:first-child) {
             margin-top: 16px;
         }
-        
-        &--red {
-            color: #FF0000;
 
-            &:visited, &:active, &:focus {
-                color: #FF0000;
+        &--red {
+            color: #f00;
+
+            &:visited,
+            &:active,
+            &:focus {
+                color: #f00;
             }
         }
 
         &--blue {
-            color: #469BFF;
+            color: #469bff;
 
-            &:visited, &:active, &:focus {
-                color: #469BFF;
+            &:visited,
+            &:active,
+            &:focus {
+                color: #469bff;
             }
         }
     }

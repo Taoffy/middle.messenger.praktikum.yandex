@@ -1,0 +1,37 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 21px 0;
+    margin-top: 24px;
+    background-color: var(--color-blue);
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 14px;
+    color: var(--color-white);
+
+    &--icon {
+        padding: 14px 16px;
+        width: auto;
+        border-radius: 32px;
+        margin-top: 0;
+    }
+
+    &--uppercase {
+        text-transform: uppercase;
+    }
+
+    &--less-padding {
+        padding: 12px 0;
+    }
+
+    &--font-weight-500 {
+        font-weight: 500;
+    }
+
+    &--font-weight-800 {
+        font-weight: 800;
+    }
+}

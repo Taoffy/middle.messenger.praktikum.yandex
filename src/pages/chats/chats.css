@@ -1,4 +1,4 @@
-@import '../../partials/profile-block/profile-block.css';
-@import '../../partials/search-block/search-block.css';
-@import '../../partials/chat-item/chat-item.css';
-@import '../../partials/avatar/avatar.css';
+@import url("../../partials/profile-block/profile-block.css");
+@import url("../../partials/search-block/search-block.css");
+@import url("../../partials/chat-item/chat-item.css");
+@import url("../../partials/avatar/avatar.css");

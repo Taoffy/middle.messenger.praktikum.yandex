@@ -1,33 +1,10 @@
 ---
 styles:
     - './profile.css'
+scripts:
+    - './index.ts'
 ---
 
 {{!< layout}}
 
-{{> profile-header/profile-header link="../../pages/chats/chats.hbs" text="Profile"}}
-<main class="profile-wrapper">
-    <div class="profile">
-        <div class="profile__avatar-block">
-            <div class="profile__avatar-wrapper">
-                <img class="profile__avatar-empty" src="../../../static/img/empty-avatar.svg" alt="empty avatar" />
-                <img class="profile__avatar-add-photo" src="../../../static/img/add-photo.svg" alt="Add photo" />
-            </div>
-            <input class="profile__avatar-input" type="file" name="avatar" accept="image/*" />
-        </div>
-        <h3 class="profile__username">Andrew</h3>
-        {{#> profile-form/profile-form additionalClass="profile__form"}}
-            {{> profile-input/profile-input name="email" heading="Email" type="email" value="pochta@yandex.ru" disabled="true"}}
-            {{> profile-input/profile-input name="login" heading="Login" type="text" value="andrewandrew" disabled="true"}}
-            {{> profile-input/profile-input name="first_name" heading="First name" type="text" value="Andrew" disabled="true"}}
-            {{> profile-input/profile-input name="second_name" heading="Second name" type="text" value="Tereshin" disabled="true"}}
-            {{> profile-input/profile-input name="display_name" heading="Display name" type="text" value="Taoffy" disabled="true"}}
-            {{> profile-input/profile-input name="phone" heading="Phone" type="tel" value="89106411050" disabled="true" withoutBorder=true}}
-            <div class="profile__settings-links">
-                <a class="profile__settings-link profile__settings-link--blue" href="#">Edit profile</a>
-                <a class="profile__settings-link profile__settings-link--blue" href="#">Change password</a>
-                <a class="profile__settings-link profile__settings-link--red" href="#">Log out</a>
-            </div>
-        {{/profile-form/profile-form}}
-    </div>
-</main>
+<div id="root"></div>

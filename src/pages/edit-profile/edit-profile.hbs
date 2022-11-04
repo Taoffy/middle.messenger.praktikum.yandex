@@ -1,21 +1,10 @@
 ---
 styles:
     - './edit-profile.css'
+scripts:
+    - './index.ts'
 ---
 
 {{!< layout}}
 
-{{> profile-header/profile-header link="../../pages/profile/profile.hbs" text="Edit profile"}}
-<main class="profile-wrapper">
-    <div class="edit-profile">
-        {{#> profile-form/profile-form}}
-            {{> profile-input/profile-input name="email" heading="Email" type="email" value="pochta@yandex.ru"}}
-            {{> profile-input/profile-input name="login" heading="Login" type="text" value="andrewandrew"}}
-            {{> profile-input/profile-input name="first_name" heading="First name" type="text" value="Andrew"}}
-            {{> profile-input/profile-input name="second_name" heading="Second name" type="text" value="Tereshin"}}
-            {{> profile-input/profile-input name="display_name" heading="Display name" type="text" value="Taoffy"}}
-            {{> profile-input/profile-input name="phone" heading="Phone" type="tel" value="89106411050" withoutBorder=true}}
-            {{> button/button text="Save" type="button" lessPadding=true fontWeight="500"}}
-        {{/profile-form/profile-form}}
-    </div>
-</main>
+<div id="root"></div>
