@@ -1,11 +1,11 @@
-@import url("../../partials/profile-block/profile-block.css");
-@import url("../../partials/search-block/search-block.css");
-@import url("../../partials/chat-item/chat-item.css");
-@import url("../../partials/avatar/avatar.css");
-@import url("../../partials/message/message.css");
-@import url("../../partials/chat-header/chat-header.css");
-@import url("../../partials/input/input.css");
-@import url("../../partials/button/button.css");
+@import url("../../components/profile-block/profile-block.css");
+@import url("../../components/search-block/search-block.css");
+@import url("../../components/chat-item/chat-item.css");
+@import url("../../components/avatar/avatar.css");
+@import url("../../components/message/message.css");
+@import url("../../components/chat-header/chat-header.css");
+@import url("../../components/input/input.css");
+@import url("../../components/button/button.css");
 
 .chat {
     display: flex;

@@ -1,6 +1,6 @@
-@import url("../../partials/input/input.css");
-@import url("../../partials/button/button.css");
-@import url("../../partials/link/link.css");
+@import url("../../components/input/input.css");
+@import url("../../components/button/button.css");
+@import url("../../components/link/link.css");
 
 .login__heading {
     font-weight: 500;

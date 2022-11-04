@@ -4,7 +4,7 @@
   "description": "This is a training project for yandex praktikum, messenger with various functions.",
   "browserslist": ">0.2%, not dead, not op_mini all",
   "scripts": {
-    "start": "env PORT=3000 parcel build src/pages/**/*.hbs src/pages/index.hbs --no-cache && node ./server.js",
+    "start": "env PORT=3000 parcel build src/pages/index.html --no-cache && node ./server.js",
     "dev": "parcel src/pages/index.html --no-cache"
   },
   "repository": {
