@@ -2,16 +2,18 @@
 @import url("../../components/button/button.css");
 @import url("../../components/link/link.css");
 
-.login__heading {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 20px;
-}
+.login {
+    &__heading {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 20px;
+    }
 
-.login__form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 424px;
-    margin-top: 48px;
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 424px;
+        margin-top: 48px;
+    }
 }
