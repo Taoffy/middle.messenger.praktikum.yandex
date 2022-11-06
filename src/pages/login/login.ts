@@ -1,5 +1,7 @@
 import { Block } from "../../ts/modules/Block/Block";
 
+import "./login.css";
+
 import { loginPageTemplate } from "./login.template";
 import { TLoginPage } from "./types";
 

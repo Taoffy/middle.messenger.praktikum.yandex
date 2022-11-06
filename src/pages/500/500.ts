@@ -1,5 +1,7 @@
 import { Block } from "../../ts/modules/Block/Block";
 
+import "./500.css";
+
 import { template500 } from "./500.template";
 import { TPage500 } from "./types";
 

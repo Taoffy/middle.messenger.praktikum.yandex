@@ -3,8 +3,6 @@ import { ProfileInput } from "../../components/profile-input/profile-input";
 import { Form } from "../../components/form/form";
 import { ProfilePage } from "./profile";
 
-import { render } from "../../ts/render";
-
 const profileHeader = new ProfileHeader("header", {
     text: "Profile",
     link: "../chats/chats.hbs",
@@ -91,12 +89,10 @@ const form = new Form("form", {
     }
 })
 
-const profilePage = new ProfilePage("main", {
+export const profilePage = new ProfilePage("main", {
     profileHeader: profileHeader,
     form: form,
     attributes: {
         class: "profile-wrapper",
     }
 });
-
-render("#root", profilePage);

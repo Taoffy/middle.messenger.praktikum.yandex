@@ -7,6 +7,7 @@ export function render<T extends object>(query: string, block: Block<T>) {
         return;
     }
 
+    root.innerHTML = "";
     root.append(block.getContent());
 
     return root;

@@ -1,5 +1,7 @@
 import { Block } from "../../ts/modules/Block/Block";
 
+import "./404.css";
+
 import { template404 } from "./404.template";
 import { TPage404 } from "./types";
 

@@ -21,8 +21,7 @@
     "node": "16.16.0"
   },
   "devDependencies": {
-    "@anikin/parcel-transformer-handlebars": "1.0.9",
-    "@parcel/validator-typescript": "^2.7.0",
+    "@parcel/validator-typescript": "2.7.0",
     "@types/node": "18.11.7",
     "@types/uuid": "8.3.4",
     "@typescript-eslint/eslint-plugin": "5.41.0",

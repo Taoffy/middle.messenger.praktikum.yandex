@@ -4,7 +4,6 @@ import { Link } from "../../components/link/link";
 import { Form } from "../../components/form/form";
 import { LoginPage } from "./login";
 
-import { render } from "../../ts/render";
 import { formSubmit } from "../../ts/components/form-submit";
 import { inputListener } from "../../ts/components/input/input-listener";
 
@@ -81,7 +80,7 @@ const form = new Form("form", {
     }
 });
 
-const loginPage = new LoginPage("main", {
+export const loginPage = new LoginPage("main", {
     form: form,
     attributes: {
         class: "auth-pages auth-pages__login",
@@ -90,5 +89,3 @@ const loginPage = new LoginPage("main", {
         witnInternalID: true
     }
 });
-
-render("#root", loginPage);

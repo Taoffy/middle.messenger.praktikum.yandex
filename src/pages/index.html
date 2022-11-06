@@ -8,21 +8,22 @@
     <title>My Messenger</title>
 </head>
 <body>
-    <main style="display: flex; flex-direction: column; margin-left: 10px;">
+    <div id="root">
         <h1>Hello, this is sitemap</h1>
         <nav>
-            <ul>
-                <a href="./login/login.hbs" style="margin-top: 10px;">Login</a>
-                <a href="./signup/signup.hbs" style="margin-top: 10px;">Signup</a>
-                <a href="./chats/chats.hbs" style="margin-top: 10px;">Chats</a>
-                <a href="./chat/chat.hbs" style="margin-top: 10px;">Chat</a>
-                <a href="./profile/profile.hbs" style="margin-top: 10px;">Profile</a>
-                <a href="./edit-profile/edit-profile.hbs" style="margin-top: 10px;">Edit profile</a>
-                <a href="./change-password/change-password.hbs" style="margin-top: 10px;">Change password</a>
-                <a href="./404/404.hbs" style="margin-top: 10px;">404</a>
-                <a href="./500/500.hbs" style="margin-top: 10px;">500</a>
+            <ul style="display: flex; flex-direction: column;">
+                <a id="login" href="#" style="margin-top: 10px;">Login</a>
+                <a id="signup" href="#" style="margin-top: 10px;">Signup</a>
+                <a id="chats" href="#" style="margin-top: 10px;">Chats</a>
+                <a id="chat" href="#" style="margin-top: 10px;">Chat</a>
+                <a id="profile" href="#" style="margin-top: 10px;">Profile</a>
+                <a id="edit-profile" href="#" style="margin-top: 10px;">Edit profile</a>
+                <a id="change-password" href="#" style="margin-top: 10px;">Change password</a>
+                <a id="404" href="#" style="margin-top: 10px;">404</a>
+                <a id="500" href="#" style="margin-top: 10px;">500</a>
             </ul>
         </nav>
-    </main>
+    </div>
+    <script type="module" src="./index.ts" defer></script>
 </body>
 </html>

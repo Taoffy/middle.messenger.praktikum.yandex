@@ -1,5 +1,7 @@
 import { Block } from "../../ts/modules/Block/Block";
 
+import "./chats.css";
+
 import { chatsPageTemplate } from "./chats.template";
 import { TChatsPage } from "./types";
 

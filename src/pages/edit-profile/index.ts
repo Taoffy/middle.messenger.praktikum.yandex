@@ -4,7 +4,6 @@ import { ProfileInput } from "../../components/profile-input/profile-input";
 import { Form } from "../../components/form/form";
 import { EditProfilePage } from "./edit-profile";
 
-import { render } from "../../ts/render";
 import { formSubmit } from "../../ts/components/form-submit";
 import { inputListener } from "../../ts/components/input/input-listener";
 
@@ -127,12 +126,10 @@ const form = new Form("form", {
     }
 });
 
-const editProfilePage = new EditProfilePage("main", {
+export const editProfilePage = new EditProfilePage("main", {
     profileHeader: profileHeader,
     form: form,
     attributes: {
         class: "profile-wrapper",
     }
 });
-
-render("#root", editProfilePage);

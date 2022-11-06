@@ -1,5 +1,7 @@
 import { Block } from "../../ts/modules/Block/Block";
 
+import "./profile.css";
+
 import { profilePageTemplate } from "./profile.template";
 import { TProfilePage } from "./types";
 

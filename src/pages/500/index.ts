@@ -1,8 +1,6 @@
 import { Link } from "../../components/link/link";
 import { Page500 } from "./500";
 
-import { render } from "../../ts/render";
-
 const link = new Link('a', {
     text: "Back to chats",
     attributes: {
@@ -12,11 +10,9 @@ const link = new Link('a', {
     }
 });
 
-const page500 = new Page500('main', {
+export const page500 = new Page500('main', {
     link: link,
     attributes: {
         class: "error-pages",
     }
 });
-
-render('#root', page500);

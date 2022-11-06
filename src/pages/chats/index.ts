@@ -4,14 +4,12 @@ import { ProfileBlock } from "../../components/profile-block/profile-block";
 import { SearchBlock } from "../../components/search-block/search-block";
 import { ChatsPage } from "./chats";
 
-import { render } from "../../ts/render";
-
 import avatarImg from "../../../static/img/avatar.svg";
 import searchImg from "../../../static/img/search-icon.svg";
 import createImg from "../../../static/img/create-icon.svg";
 
 const profileBlockAvatar = new Avatar("div", {
-    src: "../../../static/img/avatar.svg",
+    src: avatarImg,
     alt: "avatar image",
     attributes: {
         class: "avatar__wrapper avatar__wrapper--s",
@@ -76,7 +74,7 @@ const chatItem3 = new ChatItem("li", {
   }
 });
 
-const chatsPage = new ChatsPage("main", {
+export const chatsPage = new ChatsPage("main", {
     profileBlock: profileBlock,
     searchBlock: searchBlock,
     chatItems: [chatItem1, chatItem2, chatItem3],
@@ -84,5 +82,3 @@ const chatsPage = new ChatsPage("main", {
         class: "main-app"
     }
 });
-
-render('#root', chatsPage);

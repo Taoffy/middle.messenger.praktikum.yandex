@@ -9,7 +9,6 @@ import { SearchBlock } from "../../components/search-block/search-block";
 import { Form } from "../../components/form/form";
 import { ChatPage } from "./chat";
 
-import { render } from "../../ts/render";
 import { formSubmit } from "../../ts/components/form-submit";
 import { inputListener } from "../../ts/components/input/input-listener";
 
@@ -180,7 +179,7 @@ const form = new Form("form", {
     }
 });
 
-const chatPage = new ChatPage("main", {
+export const chatPage = new ChatPage("main", {
     profileBlock: profileBlock,
     searchBlock: searchBlock,
     chatItems: [chatItem1, chatItem2, chatItem3],
@@ -194,5 +193,3 @@ const chatPage = new ChatPage("main", {
         witnInternalID: true
     }
 });
-
-render('#root', chatPage);

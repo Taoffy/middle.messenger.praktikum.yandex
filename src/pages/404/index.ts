@@ -1,8 +1,6 @@
 import { Link } from "../../components/link/link";
 import { Page404 } from "./404";
 
-import { render } from "../../ts/render";
-
 const link = new Link('a', {
     text: "Back to chats",
     attributes: {
@@ -12,11 +10,9 @@ const link = new Link('a', {
     }
 });
 
-const page404 = new Page404('main', {
+export const page404 = new Page404('main', {
     link: link,
     attributes: {
         class: "error-pages",
     }
 });
-
-render('#root', page404);

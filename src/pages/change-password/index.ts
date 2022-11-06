@@ -5,7 +5,6 @@ import { ProfileInput } from "../../components/profile-input/profile-input";
 import { Form } from "../../components/form/form";
 import { ChangePasswordPage } from "./change-password";
 
-import { render } from "../../ts/render";
 import { formSubmit } from "../../ts/components/form-submit";
 import { inputListener } from "../../ts/components/input/input-listener";
 
@@ -84,12 +83,10 @@ const form = new Form("form", {
 });
 
 
-const changePasswordPage = new ChangePasswordPage("main", {
+export const changePasswordPage = new ChangePasswordPage("main", {
     profileHeader: profileHeader,
     form: form,
     attributes: {
         class: "profile-wrapper",
     }
 });
-
-render("#root", changePasswordPage);

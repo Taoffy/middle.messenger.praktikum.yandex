@@ -4,7 +4,6 @@ import { Link } from "../../components/link/link";
 import { Form } from "../../components/form/form";
 import { SignupPage } from "./signup";
 
-import { render } from "../../ts/render";
 import { inputListener } from "../../ts/components/input/input-listener";
 
 import { inputErrors } from "../../ts/input-error";
@@ -129,11 +128,9 @@ const form = new Form("form", {
     }
 });
 
-const signupPage = new SignupPage("main", {
+export const signupPage = new SignupPage("main", {
     form: form,
     attributes: {
         class: "auth-pages auth-pages__signup",
     }
 });
-
-render("#root", signupPage);
