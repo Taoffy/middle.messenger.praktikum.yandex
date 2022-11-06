@@ -1,4 +1,4 @@
-import { METHODS, TOptions } from './types';
+import { METHODS, THTTPMethod } from './types';
 
 function queryStringify<T>(data: Record<string, T>) {
     if (typeof data !== 'object') {
@@ -11,25 +11,29 @@ function queryStringify<T>(data: Record<string, T>) {
     }, '?');
 }
 
-class HTTPTransport<T extends object> {
-    get = (url: string, options: TOptions<T> = {}) => {
+export class HTTPTransport<T extends object> {
+    get: THTTPMethod<T> = (url: string, options = {}) => {
+        let finalUrl = url;
+        if (options.data) {
+            finalUrl = `${url}${queryStringify(options.data)}`;
+        }
         
-        return this.request(url, {...options, method: METHODS.GET}, options.timeout);
+        return this.request(finalUrl, {...options, method: METHODS.GET}, options.timeout);
     };
 
-    post = (url: string, options: TOptions<T> = {}) => {
+    post: THTTPMethod<T> = (url: string, options = {}) => {
         return this.request(url, {...options, method: METHODS.POST}, options.timeout);
     };
 
-    put = (url: string, options: TOptions<T> = {}) => {
+    put: THTTPMethod<T> = (url: string, options = {}) => {
         return this.request(url, {...options, method: METHODS.PUT}, options.timeout);
     };
 
-    delete = (url: string, options: TOptions<T> = {}) => { 
+    delete: THTTPMethod<T> = (url: string, options = {}) => { 
         return this.request(url, {...options, method: METHODS.DELETE}, options.timeout);
     };
 
-    request = (url: string, options: TOptions<T> = {}, timeout = 5000) => {
+    request: THTTPMethod<T> = (url: string, options = {}, timeout = 5000) => {
         const {headers = {}, method, data} = options;
 
         return new Promise((resolve, reject) => {
@@ -41,12 +45,7 @@ class HTTPTransport<T extends object> {
             const xhr = new XMLHttpRequest();
             const isGet = method === METHODS.GET;
 
-            xhr.open(
-                method, 
-                isGet && !!data
-                    ? `${url}${queryStringify(data)}`
-                    : url,
-            );
+            xhr.open(method, url);
 
             Object.keys(headers).forEach(key => {
                 xhr.setRequestHeader(key, headers[key]);
@@ -70,5 +69,3 @@ class HTTPTransport<T extends object> {
         });
     };
 }
-
-export default HTTPTransport;

@@ -1,12 +1,11 @@
-import Block from "../../ts/modules/Block/Block";
+import { Block } from "../../ts/modules/Block/Block";
 
-import changePasswordTemplate from "./change-password.template";
+import { changePasswordTemplate } from "./change-password.template";
 import { TChangePasswordPage } from "./types";
 
-import formSubmit from "../../ts/components/form-submit";
-import inputListener from "../../ts/components/input-listener";
+import { formSubmit } from "../../ts/components/form-submit";
 
-export default class ChangePasswordPage extends Block<TChangePasswordPage> {
+export class ChangePasswordPage extends Block<TChangePasswordPage> {
       constructor(tagName = "div", props: TChangePasswordPage) {
           super(tagName, props);
       }
@@ -17,7 +16,6 @@ export default class ChangePasswordPage extends Block<TChangePasswordPage> {
 
       protected _addEventListeners(): void {
           this._element.querySelector('form')?.addEventListener('submit', formSubmit);
-          this._element.querySelectorAll('input').forEach(input => { input.addEventListener('blur', inputListener); input.addEventListener('focus', inputListener) });
 
           super._addEventListeners();
       }

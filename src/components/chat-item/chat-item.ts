@@ -1,9 +1,9 @@
-import Block from "../../ts/modules/Block/Block";
+import { Block } from "../../ts/modules/Block/Block";
 
-import chatItemTemplate from "./chat-item.template";
+import { chatItemTemplate } from "./chat-item.template";
 import { TChatItem } from "./types";
 
-export default class ChatItem extends Block<TChatItem> {
+export class ChatItem extends Block<TChatItem> {
     constructor(tagName = "li", props: TChatItem) {
         super(tagName, props)
     }

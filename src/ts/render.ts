@@ -1,6 +1,6 @@
-import Block from "./modules/Block/Block";
+import { Block } from "./modules/Block/Block";
 
-function render<T extends object>(query: string, block: Block<T>) {
+export function render<T extends object>(query: string, block: Block<T>) {
     const root = document.querySelector(query);
 
     if (!root) {
@@ -11,5 +11,3 @@ function render<T extends object>(query: string, block: Block<T>) {
 
     return root;
 }
-
-export default render;

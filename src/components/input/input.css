@@ -16,11 +16,14 @@
         position: relative;
 
         &--error {
-            outline: 1px solid var(--color-red);
             border-radius: 12px;
 
             input {
-                outline: none;
+                border: 1px solid var(--color-red);
+            }
+
+            span {
+                display: block;
             }
         }
 
@@ -43,5 +46,13 @@
             line-height: 10px;
             opacity: 0.4;
         }
+    }
+
+    &__error {
+        display: none;
+        margin-top: 8px;
+        font-size: 14px;
+        line-height: 16px;
+        color: var(--color-red);
     }
 }

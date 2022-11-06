@@ -1,9 +1,9 @@
-import ProfileHeader from "../../components/profile-header/profile-header";
-import ProfileInput from "../../components/profile-input/profile-input";
+import { Form } from "../../components/form/form";
+import { ProfileHeader } from "../../components/profile-header/profile-header";
 
 export type TProfilePage = {
     profileHeader: ProfileHeader;
-    inputs: ProfileInput[];
+    form: Form;
     attributes?: {
         class?: string;
     }

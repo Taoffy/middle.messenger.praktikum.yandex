@@ -1,9 +1,9 @@
-import Block from "../../ts/modules/Block/Block";
+import { Block } from "../../ts/modules/Block/Block";
 
-import template404 from "./404.template";
+import { template404 } from "./404.template";
 import { TPage404 } from "./types";
 
-export default class Page404 extends Block<TPage404> {
+export class Page404 extends Block<TPage404> {
     constructor(tagName = "div", props: TPage404) {
         super(tagName, props);
     }

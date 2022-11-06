@@ -1,4 +1,4 @@
-const template404 = `
+export const template404 = `
 {{!< layout}}
 
 <div class="error-pages__info">
@@ -7,5 +7,3 @@ const template404 = `
     {{{ link }}}
 </div>
 `;
-
-export default template404;

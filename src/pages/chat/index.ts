@@ -1,14 +1,17 @@
-import Avatar from "../../components/avatar/avatar";
-import Button from "../../components/button/button";
-import ChatHeader from "../../components/chat-header/chat-header";
-import ChatItem from "../../components/chat-item/chat-item";
-import Input from "../../components/input/input";
-import Message from "../../components/message/message";
-import ProfileBlock from "../../components/profile-block/profile-block";
-import SearchBlock from "../../components/search-block/search-block";
-import ChatPage from "./chat";
+import { Avatar } from "../../components/avatar/avatar";
+import { Button } from "../../components/button/button";
+import { ChatHeader } from "../../components/chat-header/chat-header";
+import { ChatItem } from "../../components/chat-item/chat-item";
+import { Input } from "../../components/input/input";
+import { Message } from "../../components/message/message";
+import { ProfileBlock } from "../../components/profile-block/profile-block";
+import { SearchBlock } from "../../components/search-block/search-block";
+import { Form } from "../../components/form/form";
+import { ChatPage } from "./chat";
 
-import render from "../../ts/render";
+import { render } from "../../ts/render";
+import { formSubmit } from "../../ts/components/form-submit";
+import { inputListener } from "../../ts/components/input/input-listener";
 
 import avatarImg from "../../../static/img/avatar.svg";
 import searchImg from "../../../static/img/search-icon.svg";
@@ -144,6 +147,10 @@ const input = new Input("div", {
     },
     settings: {
         witnInternalID: true
+    },
+    events: {
+        blur: inputListener,
+        focus: inputListener,
     }
 });
 
@@ -162,14 +169,24 @@ const button = new Button("button", {
     }
 });
 
+const form = new Form("form", {
+    inputs: [input],
+    button: button,
+    attributes: {
+        class: "chat__message-form"
+    },
+    events: {
+        submit: formSubmit,
+    }
+});
+
 const chatPage = new ChatPage("main", {
     profileBlock: profileBlock,
     searchBlock: searchBlock,
     chatItems: [chatItem1, chatItem2, chatItem3],
     chatHeader: chatHeader,
     messages: [myMessage, notMyMessage],
-    input: input,
-    button: button,
+    form: form,
     attributes: {
         class: "main-app"
     },

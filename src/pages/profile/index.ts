@@ -1,8 +1,9 @@
-import ProfileHeader from "../../components/profile-header/profile-header";
-import ProfileInput from "../../components/profile-input/profile-input";
-import ProfilePage from "./profile";
+import { ProfileHeader } from "../../components/profile-header/profile-header";
+import { ProfileInput } from "../../components/profile-input/profile-input";
+import { Form } from "../../components/form/form";
+import { ProfilePage } from "./profile";
 
-import render from "../../ts/render";
+import { render } from "../../ts/render";
 
 const profileHeader = new ProfileHeader("header", {
     text: "Profile",
@@ -78,9 +79,21 @@ const profileInputPhone = new ProfileInput("div", {
     }
 });
 
-const profilePage = new ProfilePage("main", {
+const form = new Form("form", {
     inputs: [profileInputEmail, profileInputLogin, profileInputFirstName, profileInputSecondName, profileInputDisplayName, profileInputPhone],
+    content: `<div class="profile__settings-links">
+    <a class="profile__settings-link profile__settings-link--blue" href="#">Edit profile</a>
+    <a class="profile__settings-link profile__settings-link--blue" href="#">Change password</a>
+    <a class="profile__settings-link profile__settings-link--red" href="#">Log out</a>
+</div>`,
+    attributes: {
+        class: "profile-form profile__form",
+    }
+})
+
+const profilePage = new ProfilePage("main", {
     profileHeader: profileHeader,
+    form: form,
     attributes: {
         class: "profile-wrapper",
     }

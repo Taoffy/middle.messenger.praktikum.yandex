@@ -1,9 +1,9 @@
-import Block from "../../ts/modules/Block/Block";
+import { Block } from "../../ts/modules/Block/Block";
 
-import buttonTemplate from "./button.template";
+import { buttonTemplate } from "./button.template";
 import { TButton } from "./types";
 
-export default class Button extends Block<TButton> {
+export class Button extends Block<TButton> {
     constructor(tagName = "button", props: TButton) {
         super(tagName, props);
     }

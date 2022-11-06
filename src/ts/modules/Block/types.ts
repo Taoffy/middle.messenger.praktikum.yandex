@@ -6,6 +6,11 @@ export enum EVENTS {
     FLOW_RENDER = "flow:render"
 };
 
+export enum BUBLING_EVENTS {
+    FOCUS = "focus",
+    BLUR = "blur"
+};
+
 export type TRecordProps<T> = {[N: string]: T};
 
 export type TObjectEvents = {[N: string]: {[N:string]: () => void}};

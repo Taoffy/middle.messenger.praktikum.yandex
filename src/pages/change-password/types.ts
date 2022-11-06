@@ -1,11 +1,9 @@
-import Button from "../../components/button/button"
-import ProfileHeader from "../../components/profile-header/profile-header"
-import ProfileInput from "../../components/profile-input/profile-input";
+import { Form } from "../../components/form/form";
+import { ProfileHeader } from "../../components/profile-header/profile-header";
 
 export type TChangePasswordPage = {
-    inputs: ProfileInput[];
     profileHeader: ProfileHeader;
-    button: Button;
+    form: Form;
     attributes?: {
         class?: string;
     }

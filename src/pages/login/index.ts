@@ -1,20 +1,30 @@
-import Button from "../../components/button/button";
-import Input from "../../components/input/input";
-import Link from "../../components/link/link";
-import LoginPage from "./login";
+import { Button } from "../../components/button/button";
+import { Input } from "../../components/input/input";
+import { Link } from "../../components/link/link";
+import { Form } from "../../components/form/form";
+import { LoginPage } from "./login";
 
-import render from "../../ts/render";
+import { render } from "../../ts/render";
+import { formSubmit } from "../../ts/components/form-submit";
+import { inputListener } from "../../ts/components/input/input-listener";
+
+import { inputErrors } from "../../ts/input-error";
 
 const inputLogin = new Input("div", {
     placeholder: "LOGIN",
     name: "login",
     type: "text",
+    error: inputErrors.login,
     attributes: {
         class: "input__wrapper",
         "data-content": "LOGIN"
     },
     settings: {
         witnInternalID: true
+    },
+    events: {
+        blur: inputListener,
+        focus: inputListener,
     }
 });
 
@@ -22,12 +32,17 @@ const inputPassword =  new Input("div", {
     placeholder: "PASSWORD",
     name: "password",
     type: "password",
+    error: inputErrors.password,
     attributes: {
         class: "input__wrapper",
         "data-content": "PASSWORD"
     },
     settings: {
         witnInternalID: true
+    },
+    events: {
+        blur: inputListener,
+        focus: inputListener,
     }
 });
 
@@ -54,10 +69,20 @@ const link = new Link("a", {
     }
 });
 
-const loginPage = new LoginPage("main", {
+const form = new Form("form", {
     inputs: [inputLogin, inputPassword],
     button: button,
     link: link,
+    attributes: {
+        class: "login__form",
+    },
+    events: {
+        submit: formSubmit,
+    }
+});
+
+const loginPage = new LoginPage("main", {
+    form: form,
     attributes: {
         class: "auth-pages auth-pages__login",
     },

@@ -1,10 +1,10 @@
-import Avatar from "../../components/avatar/avatar";
-import ChatItem from "../../components/chat-item/chat-item";
-import ProfileBlock from "../../components/profile-block/profile-block";
-import SearchBlock from "../../components/search-block/search-block";
-import ChatsPage from "./chats";
+import { Avatar } from "../../components/avatar/avatar";
+import { ChatItem } from "../../components/chat-item/chat-item";
+import { ProfileBlock } from "../../components/profile-block/profile-block";
+import { SearchBlock } from "../../components/search-block/search-block";
+import { ChatsPage } from "./chats";
 
-import render from "../../ts/render";
+import { render } from "../../ts/render";
 
 import avatarImg from "../../../static/img/avatar.svg";
 import searchImg from "../../../static/img/search-icon.svg";

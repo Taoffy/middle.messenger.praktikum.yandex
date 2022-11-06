@@ -4,7 +4,7 @@ export type TListeners = {
 };
 
 export interface IEventBus {
-  on(event: string, callback: () => void): void;
-  off(event: string, callback: () => void): void;
+  on<T>(event: string, callback: (...args: T[]) => void): void;
+  off<T>(event: string, callback: (...args: T[]) => void): void;
   emit<T>(event: string, ...args: T[]): void;
 }

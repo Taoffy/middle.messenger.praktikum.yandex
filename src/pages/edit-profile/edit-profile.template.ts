@@ -1,11 +1,6 @@
-const editProfilePageTemplate = `
+export const editProfilePageTemplate = `
 {{{profileHeader}}}
 <div class="edit-profile">
-    <form class="profile-form">
-        {{{inputs}}}
-        {{{button}}}
-    </form>
+    {{{form}}}
 </div>
 `;
-
-export default editProfilePageTemplate;

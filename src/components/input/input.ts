@@ -1,9 +1,9 @@
-import Block from "../../ts/modules/Block/Block";
+import { Block } from "../../ts/modules/Block/Block";
 
-import inputTemplate from "./input.template";
+import { inputTemplate } from "./input.template";
 import { TInput } from "./types";
 
-export default class Input extends Block<TInput> {
+export class Input extends Block<TInput> {
     constructor(tagName = "div", props: TInput) {
         super(tagName, props);
     }

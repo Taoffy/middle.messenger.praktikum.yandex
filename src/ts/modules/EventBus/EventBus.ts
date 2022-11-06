@@ -1,6 +1,6 @@
 import { IEventBus, TListeners } from './types';
 
-class EventBus implements IEventBus  {
+export class EventBus implements IEventBus  {
   public listeners: TListeners;
 
   constructor() {
@@ -35,5 +35,3 @@ class EventBus implements IEventBus  {
     });
   }
 }
-
-export default EventBus;

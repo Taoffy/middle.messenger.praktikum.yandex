@@ -1,7 +1,7 @@
-import Link from "../../components/link/link";
-import Page404 from "./404";
+import { Link } from "../../components/link/link";
+import { Page404 } from "./404";
 
-import render from "../../ts/render";
+import { render } from "../../ts/render";
 
 const link = new Link('a', {
     text: "Back to chats",

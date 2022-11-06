@@ -1,10 +1,4 @@
-const signupPageTemplate = `
+export const signupPageTemplate = `
 <h3 class="signup__heading">Sign up</h3>
-<form class="signup__form">
-    {{{inputs}}}
-    {{{button}}}
-    {{{link}}}
-</form>
+{{{form}}}
 `;
-
-export default signupPageTemplate;

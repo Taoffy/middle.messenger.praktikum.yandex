@@ -1,11 +1,6 @@
-const changePasswordTemplate = `
+export const changePasswordTemplate = `
 {{{profileHeader}}}
 <div class="change-password">
-    <form class="profile-form">
-        {{{inputs}}}
-        {{{button}}}
-    </form>
+    {{{form}}}
 </div>
 `;
-
-export default changePasswordTemplate;

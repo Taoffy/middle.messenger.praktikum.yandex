@@ -1,5 +1,5 @@
 /* eslint-disable */
-export default {
+export const validationPatterns = {
     namesPattern: /^[A-ZА-Я][a-zа-я]*(-[A-ZА-Я][a-zа-я]*)?$/,
     loginPattern: /^[A-Za-z\-_]{3,20}$/,
     emailPattern: /^[\w\d\-\.]+@([\w-]+\.)+[\w-]{2,4}$/,

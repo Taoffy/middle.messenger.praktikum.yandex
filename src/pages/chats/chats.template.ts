@@ -1,4 +1,4 @@
-const chatsPageTemplate = `
+export const chatsPageTemplate = `
 <div class="main-app__left-column">
     {{{profileBlock}}}
     {{{searchBlock}}}
@@ -8,5 +8,3 @@ const chatsPageTemplate = `
 </div>
 <div class="main-app__right-column"></div>
 `;
-
-export default chatsPageTemplate;

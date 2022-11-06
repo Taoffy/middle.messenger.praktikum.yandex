@@ -1,9 +1,10 @@
 import Handlebars from "handlebars";
 import { v4 as makeUUID } from "uuid";
+import { isEqual } from "../../common/is-equal";
 
-import EventBus from "../EventBus/EventBus";
+import { EventBus } from "../EventBus/EventBus";
 
-import { EVENTS, TObjectEvents, TRecordProps } from "./types";
+import { EVENTS, BUBLING_EVENTS, TObjectEvents, TRecordProps } from "./types";
 
 abstract class Block<TProps extends object> {
     protected _element: HTMLElement;
@@ -29,8 +30,8 @@ abstract class Block<TProps extends object> {
           tagName,
           props
         };
-
         
+        this._element =  document.createElement('div');
         this._id = requireId ? makeUUID() : null;
         this._children = this._makePropsProxy(children) as {[N: string]: Block<TProps>};
         this.props = this._makePropsProxy({...props, _id: this._id}) as TProps;
@@ -82,6 +83,10 @@ abstract class Block<TProps extends object> {
     }
 
     public componentDidUpdate(oldProps: TProps, newProps: TProps) {
+        if (isEqual(oldProps, newProps)) {
+            return false;
+        }
+
         return true;
     }
 
@@ -160,7 +165,7 @@ abstract class Block<TProps extends object> {
 
         if (events) {
             Object.keys(events).forEach((eventName: string) => {
-                this._element.addEventListener(eventName, events[eventName as keyof typeof events]);
+                this._element.addEventListener(eventName, events[eventName as keyof typeof events], Object.values(BUBLING_EVENTS).includes(eventName as unknown as BUBLING_EVENTS) ? true : false);
             });
         }
     }
@@ -232,4 +237,4 @@ abstract class Block<TProps extends object> {
     }
 }
 
-export default Block;
+export { Block };

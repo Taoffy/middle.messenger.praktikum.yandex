@@ -1,6 +1,6 @@
-import inputValidation from "./input-validation";
+import { inputValidation } from "./input/input-validation";
 
-const formSubmit = (event: Event) => {
+export const formSubmit = (event: Event) => {
     event.preventDefault();
 
     const formObject: {[N:string]: string} = {};
@@ -13,5 +13,3 @@ const formSubmit = (event: Event) => {
     
     console.log(formObject);
 };
-
-export default formSubmit;

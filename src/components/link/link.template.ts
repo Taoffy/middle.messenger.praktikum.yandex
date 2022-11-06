@@ -1,3 +1,1 @@
-const linkTemplate = `{{text}}`;
-
-export default linkTemplate;
+export const linkTemplate = `{{text}}`;

@@ -1,4 +1,4 @@
-const chatPageTemplate = `
+export const chatPageTemplate = `
 <div class="main-app__left-column">
     {{{profileBlock}}}
     {{{searchBlock}}}
@@ -13,12 +13,7 @@ const chatPageTemplate = `
         <ul class="chat__list">
             {{{messages}}}
         </ul>
-        <form class="chat__message-form">
-            {{{input}}}
-            {{{button}}}
-        </form>
+        {{{form}}}
     </div>
 </div>
 `;
-
-export default chatPageTemplate;

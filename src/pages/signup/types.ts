@@ -1,11 +1,7 @@
-import Button from "../../components/button/button";
-import Input from "../../components/input/input";
-import Link from "../../components/link/link";
+import { Form } from "../../components/form/form";
 
 export type TSignupPage = {
-    inputs: Input[];
-    button: Button;
-    link: Link;
+    form: Form;
     attributes?: {
         class?: string;
     }

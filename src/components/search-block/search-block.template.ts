@@ -1,4 +1,4 @@
-const searchBlockTemplate = `
+export const searchBlockTemplate = `
 <div class="search-block__wrapper">
     <button class="search-block__button" type="button">
         <img class="search-block__icon" src="{{searchImg}}" alt="search button" />
@@ -6,5 +6,3 @@ const searchBlockTemplate = `
     <input class="search-block__input" type="text" />
 </div>
 `;
-
-export default searchBlockTemplate;

@@ -1,10 +1,15 @@
 
-import Button from "../../components/button/button";
-import ProfileHeader from "../../components/profile-header/profile-header";
-import ChangePasswordPage from "./change-password";
+import { Button } from "../../components/button/button";
+import { ProfileHeader } from "../../components/profile-header/profile-header";
+import { ProfileInput } from "../../components/profile-input/profile-input";
+import { Form } from "../../components/form/form";
+import { ChangePasswordPage } from "./change-password";
 
-import render from "../../ts/render";
-import ProfileInput from "../../components/profile-input/profile-input";
+import { render } from "../../ts/render";
+import { formSubmit } from "../../ts/components/form-submit";
+import { inputListener } from "../../ts/components/input/input-listener";
+
+import { inputErrors } from "../../ts/input-error";
 
 const profileHeader = new ProfileHeader("header", {
     text: "Edit profile",
@@ -19,8 +24,13 @@ const profileInputOldPassword = new ProfileInput("div", {
     heading: "Old password",
     type: "password",
     value: "12345678",
+    error: inputErrors.password,
     attributes: {
         class: "profile-input",
+    },
+    events: {
+        focus: inputListener,
+        blur: inputListener
     }
 });
 
@@ -29,8 +39,13 @@ const profileInputNewPassword = new ProfileInput("div", {
     heading: "New password",
     type: "password",
     value: "123456789",
+    error: inputErrors.password,
     attributes: {
         class: "profile-input",
+    },
+    events: {
+        focus: inputListener,
+        blur: inputListener
     }
 });
 
@@ -39,8 +54,13 @@ const profileInputRepeatNewPassword = new ProfileInput("div", {
     heading: "Repeat new password",
     type: "password",
     value: "123456789",
+    error: inputErrors.password,
     attributes: {
         class: "profile-input",
+    },
+    events: {
+        focus: inputListener,
+        blur: inputListener
     }
 });
 
@@ -52,11 +72,21 @@ const button = new Button("button", {
     }
 });
 
+const form = new Form("form", {
+    inputs: [profileInputOldPassword, profileInputNewPassword, profileInputRepeatNewPassword],
+    button: button,
+    attributes: {
+        class: "profile-form",
+    },
+    events: {
+        submit: formSubmit,
+    }
+});
+
 
 const changePasswordPage = new ChangePasswordPage("main", {
-    inputs: [profileInputOldPassword, profileInputNewPassword, profileInputRepeatNewPassword],
     profileHeader: profileHeader,
-    button: button,
+    form: form,
     attributes: {
         class: "profile-wrapper",
     }

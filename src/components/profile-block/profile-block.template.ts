@@ -1,4 +1,4 @@
-const profileBlockTemplate = `
+export const profileBlockTemplate = `
 <div class="profile-block__left-part">
     {{{avatar}}}
     <div class="profile-block__text-block">
@@ -12,5 +12,3 @@ const profileBlockTemplate = `
     </button>
 </div>
 `;
-
-export default profileBlockTemplate;

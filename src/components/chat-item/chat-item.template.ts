@@ -1,4 +1,4 @@
-const chatItemTemplate = `
+export const chatItemTemplate = `
 <div class="chat-item__left-part">
     {{{avatar}}}
     <div class="chat-item__text-block">
@@ -13,5 +13,3 @@ const chatItemTemplate = `
     {{/if}}
 </div>
 `;
-
-export default chatItemTemplate;

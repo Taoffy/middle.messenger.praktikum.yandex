@@ -14,3 +14,5 @@ export type TOptions<T> = {
     method?: METHODS;
     data?: Record<string, T>
 };
+
+export type THTTPMethod<T> = (url: string, options: TOptions<T>, timeout?: number) => Promise<unknown>

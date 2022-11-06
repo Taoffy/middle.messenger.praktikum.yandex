@@ -1,9 +1,9 @@
-import Block from "../../ts/modules/Block/Block";
+import { Block } from "../../ts/modules/Block/Block";
 
-import messageTemplate from "./message.template";
+import { messageTemplate } from "./message.template";
 import { TMessage } from "./types";
 
-export default class Message extends Block<TMessage> {
+export class Message extends Block<TMessage> {
     constructor(tagName = "li", props: TMessage) {
         super(tagName, props);
     }

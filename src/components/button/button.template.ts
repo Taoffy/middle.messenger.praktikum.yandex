@@ -1,3 +1,1 @@
-const buttonTemplate = `{{{ content }}}`;
-
-export default buttonTemplate;
+export const buttonTemplate = `{{{ content }}}`;

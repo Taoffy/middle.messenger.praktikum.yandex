@@ -1,9 +1,9 @@
-import Block from "../../ts/modules/Block/Block";
+import { Block } from "../../ts/modules/Block/Block";
 
-import headerTemplate from "./chat-header.template";
+import { headerTemplate } from "./chat-header.template";
 import { TChatHeader } from "./types";
 
-export default class ChatHeader extends Block<TChatHeader> {
+export class ChatHeader extends Block<TChatHeader> {
     constructor(tagName = 'div', props: TChatHeader) {
         super(tagName, props);
     }

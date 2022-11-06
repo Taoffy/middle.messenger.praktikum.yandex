@@ -1,7 +1,7 @@
-import Link from "../../components/link/link";
-import Page500 from "./500";
+import { Link } from "../../components/link/link";
+import { Page500 } from "./500";
 
-import render from "../../ts/render";
+import { render } from "../../ts/render";
 
 const link = new Link('a', {
     text: "Back to chats",
