@@ -1,0 +1,16 @@
+:root,
+::before,
+::after {
+    --color-white: #fff;
+    --color-red: #f00;
+    --color-blue: #469bff;
+    --color-black: #000;
+    --color-black-title: #1e1e1e;
+    --color-shadow-60: rgb(0 0 0 / 60%);
+    --color-shadow-40: rgb(0 0 0 / 40%);
+    --color-grey: #999;
+    --color-grey-secondary: #f3f3f3;
+    --color-background: #f8f8f8;
+    --color-grey-dark: #ececec;
+    --color-grey-input-border: #eaeaea;
+}

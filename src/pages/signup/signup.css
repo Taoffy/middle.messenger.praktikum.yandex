@@ -1,17 +1,19 @@
-@import '../../partials/input/input.css';
-@import '../../partials/button/button.css';
-@import '../../partials/link/link.css';
+@import url("../../components/input/input.css");
+@import url("../../components/button/button.css");
+@import url("../../components/link/link.css");
 
-.signup__heading {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 20px;
-}
+.signup {
+    &__heading {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 20px;
+    }
 
-.signup__form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 424px;
-  margin-top: 48px;
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 424px;
+        margin-top: 48px;
+    }
 }
