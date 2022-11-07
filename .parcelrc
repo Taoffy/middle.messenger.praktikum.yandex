@@ -6,4 +6,4 @@
     "validators": {
         "*.{ts,tsx}": ["@parcel/validator-typescript"]
     }
-} 
+}
