@@ -2,5 +2,9 @@ export const formTemplate = `
 {{{inputs}}}
 {{{button}}}
 {{{link}}}
-{{{content}}}
+{{#if isProfileForm}}
+<div class="profile__settings-links">
+  {{{contentLinks}}}
+</div>
+{{/if}}
 `;

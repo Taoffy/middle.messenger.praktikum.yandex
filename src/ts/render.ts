@@ -10,5 +10,7 @@ export function render<T extends object>(query: string, block: Block<T>) {
     root.innerHTML = "";
     root.append(block.getContent());
 
+    block.dispatchComponentDidMount();
+
     return root;
 }

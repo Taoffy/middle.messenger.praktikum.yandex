@@ -1,42 +1,40 @@
 import { METHODS, THTTPMethod } from './types';
 
-function queryStringify<T>(data: Record<string, T>) {
-    if (typeof data !== 'object') {
-        throw new Error('Data must be object');
+import { queryStringify } from '../../common/query-string';
+
+export class HTTPTransport {
+    private _baseUrl: string;
+
+    constructor(baseUrl: string) {
+        this._baseUrl = baseUrl;
     }
 
-    const keys = Object.keys(data);
-    return keys.reduce((result, key, index) => {
-      return `${result}${key}=${data[key]}${index < keys.length - 1 ? '&' : ''}`;
-    }, '?');
-}
-
-export class HTTPTransport<T extends object> {
-    get: THTTPMethod<T> = (url: string, options = {}) => {
+    public get: THTTPMethod = (url: string, options) => {
         let finalUrl = url;
         if (options.data) {
             finalUrl = `${url}${queryStringify(options.data)}`;
         }
         
-        return this.request(finalUrl, {...options, method: METHODS.GET}, options.timeout);
+        return this.request(finalUrl, {...options, method: METHODS.GET}, options?.timeout);
     };
 
-    post: THTTPMethod<T> = (url: string, options = {}) => {
-        return this.request(url, {...options, method: METHODS.POST}, options.timeout);
+    public post: THTTPMethod = (url: string, options) => {
+        return this.request(url, {...options, method: METHODS.POST}, options?.timeout);
     };
 
-    put: THTTPMethod<T> = (url: string, options = {}) => {
+    public put: THTTPMethod = (url: string, options) => {
         return this.request(url, {...options, method: METHODS.PUT}, options.timeout);
     };
 
-    delete: THTTPMethod<T> = (url: string, options = {}) => { 
+    public delete: THTTPMethod = (url: string, options) => { 
         return this.request(url, {...options, method: METHODS.DELETE}, options.timeout);
     };
 
-    request: THTTPMethod<T> = (url: string, options = {}, timeout = 5000) => {
+    private request: THTTPMethod = (url: string, options = {}, timeout = 5000) => {
         const {headers = {}, method, data} = options;
+        const finalUrl = `${this._baseUrl}${url}`;
 
-        return new Promise((resolve, reject) => {
+        return new Promise<XMLHttpRequest>((resolve, reject) => {
             if (!method) {
                 reject('No method');
                 return;
@@ -45,7 +43,7 @@ export class HTTPTransport<T extends object> {
             const xhr = new XMLHttpRequest();
             const isGet = method === METHODS.GET;
 
-            xhr.open(method, url);
+            xhr.open(method, finalUrl);
 
             Object.keys(headers).forEach(key => {
                 xhr.setRequestHeader(key, headers[key]);
@@ -60,11 +58,13 @@ export class HTTPTransport<T extends object> {
         
             xhr.timeout = timeout;
             xhr.ontimeout = reject;
+
+            xhr.withCredentials = true;
             
             if (isGet || !data) {
                 xhr.send();
             } else {
-                xhr.send(JSON.stringify(data));
+                xhr.send(data instanceof FormData ? data : JSON.stringify(data));
             }
         });
     };

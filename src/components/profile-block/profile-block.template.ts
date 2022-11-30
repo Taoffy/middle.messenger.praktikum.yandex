@@ -1,14 +1,19 @@
 export const profileBlockTemplate = `
 <div class="profile-block__left-part">
-    {{{avatar}}}
+    <div class="avatar__wrapper avatar__wrapper--s">
+        {{#if src}}
+        <img class="avatar" src="{{src}}" alt="{{alt}}" />
+        {{/if}}
+        {{#unless src}}
+        <img class="avatar" src="{{defaultSrc}}" alt="{{alt}}" />
+        {{/unless}}
+    </div>
     <div class="profile-block__text-block">
         <span class="profile-block__username">{{username}}</span>
-        <a class="profile-block__profile-link" href="{{profileLink}}">Profile</a>
+        {{{link}}}
     </div>
 </div>
 <div class="profile-block__right-part">
-    <button class="profile-block__button">
-        <img src="{{createImg}}" alt="create button" />
-    </button>
+    {{{createButton}}}
 </div>
 `;

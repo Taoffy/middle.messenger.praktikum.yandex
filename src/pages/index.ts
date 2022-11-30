@@ -1,56 +1,28 @@
-import { chatPage } from "./chat";
-import { chatsPage } from "./chats";
-import { editProfilePage } from "./edit-profile";
-import { loginPage } from "./login";
-import { profilePage } from "./profile";
-import { signupPage } from "./signup";
-import { changePasswordPage } from "./change-password";
-import { page404 } from "./404";
-import { page500 } from "./500";
+import { ChatsPage } from "./chats";
+import { EditProfilePage } from "./edit-profile";
+import { LoginPage } from "./login";
+import { ProfilePage } from "./profile";
+import { SignupPage } from "./signup";
+import { ChangePasswordPage } from "./change-password";
+import { Page404 } from "./404";
+import { Page500 } from "./500";
 
-import { render } from "../ts/render";
+import { Router } from "../ts/modules/Router/Router";
 
-document.querySelector("#login")?.addEventListener('click', (event) => {
-    event.preventDefault();
-    render("#root", loginPage);
-});
+import { routes } from "../ts/utils/routes";
 
-document.querySelector("#signup")?.addEventListener('click', (event) => {
-    event.preventDefault();
-    render("#root", signupPage);
-});
+const router = new Router("#root");
 
-document.querySelector("#chats")?.addEventListener('click', (event) => {
-    event.preventDefault();
-    render("#root", chatsPage);
-});
+router
+    .use(routes.login, LoginPage)
+    .use(routes[404], Page404)
+    .use(routes[500], Page500)
+    .use(routes.chats, ChatsPage)
+    .use(routes.editProfile, EditProfilePage)
+    .use(routes.profile, ProfilePage)
+    .use(routes.signup, SignupPage)
+    .use(routes.changePassword, ChangePasswordPage);
 
-document.querySelector("#chat")?.addEventListener('click', (event) => {
-    event.preventDefault();
-    render("#root", chatPage);
-});
+router.start();
 
-document.querySelector("#profile")?.addEventListener('click', (event) => {
-    event.preventDefault();
-    render("#root", profilePage);
-});
-
-document.querySelector("#edit-profile")?.addEventListener('click', (event) => {
-    event.preventDefault();
-    render("#root", editProfilePage);
-});
-
-document.querySelector("#change-password")?.addEventListener('click', (event) => {
-    event.preventDefault();
-    render("#root", changePasswordPage);
-});
-
-document.querySelector("#404")?.addEventListener('click', (event) => {
-    event.preventDefault();
-    render("#root", page404);
-});
-
-document.querySelector("#500")?.addEventListener('click', (event) => {
-    event.preventDefault();
-    render("#root", page500);
-});
+export { router };

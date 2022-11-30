@@ -1,8 +1,10 @@
 import { validationPatterns } from "../../validation-patterns";
 
-export const inputValidation = (input: HTMLInputElement) => {
+export const inputValidation = (input: HTMLInputElement, isError?: boolean|undefined) => {
     const inputName = input.name;
     const isProfileInput = input.parentElement?.parentElement?.classList.contains('profile-input');
+
+    isError = false;
 
     switch(inputName) {
         case "first_name":
@@ -13,6 +15,7 @@ export const inputValidation = (input: HTMLInputElement) => {
                 isProfileInput ? input.parentElement?.parentElement?.classList.remove('profile-input--error') : input.parentElement?.classList.remove('input__wrapper--error');
             } else {
               isProfileInput ? input.parentElement?.parentElement?.classList.add('profile-input--error') : input.parentElement?.classList.add('input__wrapper--error');
+              isError = true;
             }
             break;
         }
@@ -24,6 +27,7 @@ export const inputValidation = (input: HTMLInputElement) => {
                 isProfileInput ? input.parentElement?.parentElement?.classList.remove('profile-input--error') : input.parentElement?.classList.remove('input__wrapper--error');
             } else {
                 isProfileInput ? input.parentElement?.parentElement?.classList.add('profile-input--error') : input.parentElement?.classList.add('input__wrapper--error');
+                isError = true;
             }
             break;
         }
@@ -35,6 +39,7 @@ export const inputValidation = (input: HTMLInputElement) => {
                 isProfileInput ? input.parentElement?.parentElement?.classList.remove('profile-input--error') : input.parentElement?.classList.remove('input__wrapper--error');
             } else {
                 isProfileInput ? input.parentElement?.parentElement?.classList.add('profile-input--error') : input.parentElement?.classList.add('input__wrapper--error');
+                isError = true;
             }
             break;
         }
@@ -49,6 +54,7 @@ export const inputValidation = (input: HTMLInputElement) => {
                 isProfileInput ? input.parentElement?.parentElement?.classList.remove('profile-input--error') : input.parentElement?.classList.remove('input__wrapper--error');
             } else {
                 isProfileInput ? input.parentElement?.parentElement?.classList.add('profile-input--error') : input.parentElement?.classList.add('input__wrapper--error');
+                isError = true;
             }
             break;
         }
@@ -60,19 +66,24 @@ export const inputValidation = (input: HTMLInputElement) => {
                 isProfileInput ? input.parentElement?.parentElement?.classList.remove('profile-input--error') : input.parentElement?.classList.remove('input__wrapper--error');
             } else {
                 isProfileInput ? input.parentElement?.parentElement?.classList.add('profile-input--error') : input.parentElement?.classList.add('input__wrapper--error');
+                isError = true;
             }
             break;
         }
 
-        case "message": {
+        case "message":
+        case "title": {
             const isValid = input.value.length !== 0;
 
             if (isValid) {
                 isProfileInput ? input.parentElement?.parentElement?.classList.remove('profile-input--error') : input.parentElement?.classList.remove('input__wrapper--error');
             } else {
                 isProfileInput ? input.parentElement?.parentElement?.classList.add('profile-input--error') : input.parentElement?.classList.add('input__wrapper--error');
+                isError = true;
             }
             break;
         }
     }
+
+    return isError;
 };

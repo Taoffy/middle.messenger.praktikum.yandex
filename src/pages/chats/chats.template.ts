@@ -6,5 +6,10 @@ export const chatsPageTemplate = `
         {{{chatItems}}}
     </ul>
 </div>
-<div class="main-app__right-column"></div>
+{{{currentChat}}}
+{{{modalCreateChat}}}
+{{{modalActions}}}
+{{{modalDeleteChat}}}
+{{{modalAddUser}}}
+{{{modalDeleteUser}}}
 `;

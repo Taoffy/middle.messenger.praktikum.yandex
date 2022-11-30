@@ -1,1 +1,1 @@
-export const buttonTemplate = `{{{ content }}}`;
+export const buttonTemplate = `{{{ icon }}}{{{ content }}}`;

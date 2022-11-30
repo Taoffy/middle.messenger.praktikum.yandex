@@ -1,4 +1,8 @@
-@import url("../../components/profile-block/profile-block.css");
-@import url("../../components/search-block/search-block.css");
-@import url("../../components/chat-item/chat-item.css");
-@import url("../../components/avatar/avatar.css");
+@import url("../../components/message/message.css");
+
+/* stylelint-disable-next-line selector-class-pattern */
+.chats__modal-actions {
+    position: absolute;
+    right: 20px;
+    top: 50px;
+}

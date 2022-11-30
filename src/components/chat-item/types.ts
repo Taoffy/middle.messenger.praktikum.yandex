@@ -1,8 +1,7 @@
-import { Avatar } from "../avatar/avatar";
-
 export type TChatItem = {
-    avatar: Avatar;
-    username: string;
+    avatarSrc?: string;
+    defaultSrc: string;
+    title: string;
     lastMessage: string;
     time: number|string;
     newMessages?: number;
@@ -11,5 +10,8 @@ export type TChatItem = {
     };
     settings?: {
         witnInternalID?: boolean;
+    };
+    events?: {
+        [N:string]: (event: Event) => void
     };
 };
