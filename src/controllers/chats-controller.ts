@@ -125,6 +125,7 @@ export class ChatsController {
             });
             store.set ('messages', oldMessages);
             renderMessages();
+            scrollMessagesListToBottom();
         }
     }
 
