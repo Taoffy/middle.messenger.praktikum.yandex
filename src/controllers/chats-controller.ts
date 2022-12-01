@@ -6,7 +6,7 @@ import { websocket } from "../ts/modules/ChatWebsocket/ChatWebsocket";
 import { WEBSOCKET_EVENTS } from "../ts/modules/ChatWebsocket/events";
 
 import { renderMessages } from "../ts/utils/components/render-messages";
-import { scrollMessagesListToBottom } from "../ts/utils/scrollToBottom";
+import { scrollMessagesListToBottom } from "../ts/utils/scroll-messages-list-to-bottom";
 
 import { TCreateChat, TDeleteChat, TUsersDataForChat, TToken } from "./types";
 
