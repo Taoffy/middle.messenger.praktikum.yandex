@@ -3,7 +3,7 @@ export const currentChatTemplate = `
     <div class="current-chat__info">
         <div class="avatar__wrapper avatar__wrapper--s">
             {{#if avatarSrc}}
-            <img class="avatar" src="{{avatarSrc}}" alt="{{alt}}" />
+            <img class="avatar" src="https://ya-praktikum.tech/api/v2/resources{{avatarSrc}}" alt="{{alt}}" />
             {{/if}}
             {{#unless avatarSrc}}
             <img class="avatar" src="{{defaultSrc}}" alt="{{alt}}" />
@@ -17,10 +17,12 @@ export const currentChatTemplate = `
     {{{actionsButton}}}
 </div>
 <div class="current-chat__bottom-part">
-    <span class="current-chat__date">Today</span>
-    <ul class="current-chat__list">
-        {{{messages}}}
-    </ul>
+    <div class="current-chat__messages-list">
+        <div class="current-chat__day-messages">
+            <span class="current-chat__date">Today</span>
+            {{{messages}}}
+        </div>
+    </div>
     {{{form}}}
 </div>
 `;

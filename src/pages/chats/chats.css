@@ -1,4 +1,5 @@
 @import url("../../components/message/message.css");
+@import url("../../css/components/avatar.css");
 
 /* stylelint-disable-next-line selector-class-pattern */
 .chats__modal-actions {

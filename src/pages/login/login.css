@@ -1,7 +1,3 @@
-@import url("../../components/input/input.css");
-@import url("../../components/button/button.css");
-@import url("../../components/link/link.css");
-
 .login {
     &__heading {
         font-weight: 500;

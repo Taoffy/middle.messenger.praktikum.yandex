@@ -2,7 +2,7 @@ export const chatItemTemplate = `
 <div class="chat-item__left-part">
     <div class="avatar__wrapper avatar__wrapper--m">
         {{#if avatarSrc}}
-        <img class="avatar" src="{{avatarSrc}}" alt="{{alt}}" />
+        <img class="avatar" src="https://ya-praktikum.tech/api/v2/resources{{avatarSrc}}" alt="{{alt}}" />
         {{/if}}
         {{#unless avatarSrc}}
         <img class="avatar" src="{{defaultSrc}}" alt="{{alt}}" />

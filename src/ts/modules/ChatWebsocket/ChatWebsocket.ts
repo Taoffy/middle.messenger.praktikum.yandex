@@ -37,19 +37,21 @@ class ChatWebsocket extends EventBus {
 
     private subscribeToEvents() {
         this.websocket.addEventListener("open", this.onOpen);
-
         this.websocket.addEventListener("message", this.onMessage);
-
         this.websocket.addEventListener("error", this.onError);
-
         this.websocket.addEventListener("close", this.onClose);
+    }
+
+    private unsubscribeFromEvents() {
+        this.websocket.removeEventListener("open", this.onOpen);
+        this.websocket.removeEventListener("message", this.onMessage);
+        this.websocket.removeEventListener("error", this.onError);
+        this.websocket.removeEventListener("close", this.onClose);
     }
 
     public connect() {
         if(this.websocket) {
-            this.websocket.close();
-            clearInterval(this.timer);
-            this.timer = undefined;
+            this.close();
         }
         const userId = store.getState().user.id;
         const chatId = store.getState().currentChatId;
@@ -73,6 +75,13 @@ class ChatWebsocket extends EventBus {
 
     public getMessages() {
         this.websocket.send(JSON.stringify({content: 0, type: "get old"}));
+    }
+
+    public close() {
+        this.unsubscribeFromEvents();
+        this.websocket.close();
+        clearInterval(this.timer);
+        this.timer = undefined;
     }
 }
 

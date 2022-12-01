@@ -5,6 +5,10 @@
     padding: 16px;
     border-radius: 16px;
 
+    &:first-child {
+        margin-top: 40px;
+    }
+
     &:nth-child(n + 2) {
         margin-top: 24px;
     }

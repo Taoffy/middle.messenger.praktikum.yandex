@@ -11,7 +11,6 @@ import { inputErrors } from "../../ts/input-error";
 import { setInputsValue } from "../../ts/utils/components/set-inputs-value";
 import { getDataFromForm } from "../../ts/components/form/form-data-get";
 import { goToHref } from "../../ts/components/link/go-to-href";
-import { clearInputs } from "../../ts/utils/components/clear-inputs";
 
 import { AuthController } from "../../controllers/auth-controller";
 import { ProfileController } from "../../controllers/profile-controller";
@@ -185,7 +184,6 @@ export class EditProfilePage extends Block<TEditProfilePage> {
     }
 
     public async componentDidMount() {
-        clearInputs(this.element);
         if (!store.getState().isAuth) {
             await authController.getUserData();
 
@@ -197,6 +195,9 @@ export class EditProfilePage extends Block<TEditProfilePage> {
             } else {
                 router.go(routes.login);
             }
+        } else {
+            const user = store.getState().user;
+            setInputsValue(this._element, user);
         }
     }
 

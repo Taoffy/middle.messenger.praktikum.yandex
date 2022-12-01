@@ -1,6 +1,4 @@
-@import url("../../components/profile-header/profile-header.css");
 @import url("../../css/components/profile-form.css");
-@import url("../../components/profile-input/profile-input.css");
 
 .profile {
     display: flex;

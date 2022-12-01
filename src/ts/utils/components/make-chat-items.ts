@@ -28,10 +28,13 @@ export function makeChatItems<T extends Array<TChatObject>>(chatItems: T) {
             },
             events: {
                 click: async () => {
+                    if (store.getState().currentToken) {
+                        chatsController.unregisterListeners();
+                    }
                     await chatsController.getToken({ chatId: chatItem.id });
                     store.set("currentChatId", chatItem.id);
-                    renderCurrentChat(chatItem.title, chatItem.id);
                     websocket.connect();
+                    renderCurrentChat(chatItem.title, chatItem.id, chatItem.avatar as string);
                     chatsController.registerListeners();
                 }
             }

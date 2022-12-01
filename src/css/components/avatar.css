@@ -1,7 +1,8 @@
 .avatar {
-    object-fit: contain;
+    object-fit: cover;
     width: inherit;
     height: inherit;
+    border-radius: 100vh;
 
     &__wrapper {
         display: flex;

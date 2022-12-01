@@ -14,7 +14,7 @@ import { store } from "../../../store/Store";
 
 import avatarImg from "../../../../static/img/avatar.svg";
 
-export function renderCurrentChat(title: string, chatId: number) {
+export function renderCurrentChat(title: string, chatId: number, avatarSrc: string) {
     const input = new Input("div", {
         placeholder: "Write a message...",
         name: "message",
@@ -98,6 +98,7 @@ export function renderCurrentChat(title: string, chatId: number) {
         actionsButton: actionsButton,
         form: form,
         defaultSrc: avatarImg,
+        avatarSrc: avatarSrc,
         title: title,
         attributes: {
             class: "current-chat",

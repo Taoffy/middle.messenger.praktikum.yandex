@@ -6,6 +6,7 @@ import { websocket } from "../ts/modules/ChatWebsocket/ChatWebsocket";
 import { WEBSOCKET_EVENTS } from "../ts/modules/ChatWebsocket/events";
 
 import { renderMessages } from "../ts/utils/components/render-messages";
+import { scrollMessagesListToBottom } from "../ts/utils/scrollToBottom";
 
 import { TCreateChat, TDeleteChat, TUsersDataForChat, TToken } from "./types";
 
@@ -64,6 +65,7 @@ export class ChatsController {
             .deleteChat(data)
             .then(response => {
                 if (response.status === 200) {
+                    websocket.close();
                     store.set('currentChatId', '');
                     store.set('currentChat', undefined);
                     this.getChats();
@@ -113,6 +115,7 @@ export class ChatsController {
 
             store.set('messages', oldMessages);
             renderMessages();
+            scrollMessagesListToBottom();
         } else if (messages.type === "message") {
             const oldMessages = store.getState().messages;
             oldMessages.push({
@@ -125,8 +128,19 @@ export class ChatsController {
         }
     }
 
+    private onClose() {
+        console.log('websocket closed!');
+    }
+
     public registerListeners() {
         websocket.on(WEBSOCKET_EVENTS.open, this.getOldMessages);
         websocket.on(WEBSOCKET_EVENTS.message, this.setMessages);
+        websocket.on(WEBSOCKET_EVENTS.close, this.onClose);
+    }
+
+    public unregisterListeners() {
+        websocket.off(WEBSOCKET_EVENTS.open, this.getOldMessages);
+        websocket.off(WEBSOCKET_EVENTS.message, this.setMessages);
+        websocket.off(WEBSOCKET_EVENTS.close, this.onClose);
     }
 }

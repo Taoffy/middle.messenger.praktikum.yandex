@@ -131,7 +131,7 @@ const link = new Link("a", {
     attributes: {
         class: "link link--uppercase",
         style: 'margin-top: 24px;',
-        href: "/login"
+        href: routes.login,
     },
     events: {
         click: goToHref
