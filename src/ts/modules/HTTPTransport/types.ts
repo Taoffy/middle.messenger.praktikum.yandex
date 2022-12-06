@@ -4,15 +4,15 @@ export enum METHODS {
   POST = 'POST',
   PUT = 'PUT',
   DELETE = 'DELETE',
-}
+};
 
-export type TOptions<T> = {
+export type TOptions = {
     headers?: {
         [N: string]: string,
     };
     timeout?: number;
     method?: METHODS;
-    data?: Record<string, T>
+    data?: Record<string, string|number|boolean|Array<unknown>> | FormData;
 };
 
-export type THTTPMethod<T> = (url: string, options: TOptions<T>, timeout?: number) => Promise<unknown>
+export type THTTPMethod = (url: string, options: TOptions, timeout?: number) => Promise<XMLHttpRequest>;

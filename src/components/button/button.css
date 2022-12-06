@@ -19,6 +19,28 @@
         margin-top: 0;
     }
 
+    &--add-chat {
+        padding: 5px 11px;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+    }
+
+    &--actions {
+        justify-content: flex-start;
+        padding: 0;
+        background-color: transparent;
+        color: var(--color-black);
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:not(:first-child) {
+            margin-top: 16px;
+        }
+    }
+
     &--uppercase {
         text-transform: uppercase;
     }

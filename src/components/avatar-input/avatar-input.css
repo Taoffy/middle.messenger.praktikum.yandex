@@ -1,0 +1,13 @@
+.avatar-input {
+    display: none;
+
+    &__label {
+        text-align: center;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: var(--color-blue);
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}

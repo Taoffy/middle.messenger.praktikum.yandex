@@ -1,6 +1,4 @@
-@import url("../../components/profile-header/profile-header.css");
 @import url("../../css/components/profile-form.css");
-@import url("../../components/profile-input/profile-input.css");
 
 .profile {
     display: flex;
@@ -25,26 +23,34 @@
         padding: 36px 39px;
         background-color: #efefef;
         border-radius: 100px;
+        cursor: pointer;
 
         &:hover {
             outline: 1px solid #000;
         }
+
+        &--without-padding {
+            padding: 0;
+        }
     }
 
-    &__avatar-empty {
+    &__empty-avatar {
         width: 52px;
         height: 58px;
         object-fit: contain;
+    }
+
+    &__avatar {
+        width: 130px;
+        height: 130px;
+        border-radius: 100px;
+        object-fit: cover;
     }
 
     &__avatar-add-photo {
         position: absolute;
         bottom: 0;
         right: 0;
-    }
-
-    &__avatar-input {
-        display: none;
     }
 
     &__username {

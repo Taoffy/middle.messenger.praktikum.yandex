@@ -1,3 +1,4 @@
+/* eslint-disable */
 export type TLink = {
     uppercase?: boolean;
     fontWeight?: string;
@@ -11,4 +12,7 @@ export type TLink = {
     settings?: {
         witnInternalID?: boolean;
     };
+    events?: {
+        [N: string]: (event: Event) => void
+    }
 };

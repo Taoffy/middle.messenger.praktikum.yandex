@@ -1,10 +1,12 @@
-import { Avatar } from "../avatar/avatar";
+import { Button } from "../button/button";
+import { Link } from "../link/link";
 
 export type TProfileBlock = {
     username: string;
-    profileLink: string;
-    avatar: Avatar;
-    createImg: string;
+    link: Link;
+    src?: string;
+    defaultSrc: string;
+    createButton: Button;
     attributes?: {
         class: string;
     };

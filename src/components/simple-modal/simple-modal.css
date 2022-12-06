@@ -1,0 +1,15 @@
+.simple-modal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 210px;
+    padding: 15px;
+    background-color: var(--color-white);
+    border-radius: 32px;
+    /* stylelint-disable-next-line length-zero-no-unit */
+    box-shadow: 0px 0px 6px rgba(0 0 0 / 14%);
+
+    &--hidden {
+        display: none;
+    }
+}

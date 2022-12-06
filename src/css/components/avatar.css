@@ -1,0 +1,24 @@
+.avatar {
+    object-fit: cover;
+    width: inherit;
+    height: inherit;
+    border-radius: 100vh;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 80px;
+        background-color: var(--color-white);
+
+        &--s {
+            width: 32px;
+            height: 32px;
+        }
+
+        &--m {
+            width: 48px;
+            height: 48px;
+        }
+    }
+}

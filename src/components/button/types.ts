@@ -1,14 +1,14 @@
 export type TButton = {
     content?: string;
-    uppercase?: boolean;
-    lessPadding?: boolean;
-    icon?: boolean;
-    fontWeight?: number;
+    icon?: string;
     type: string;
     attributes?: {
         class?: string;
     };
     settings?: {
         witnInternalID?: boolean;
+    };
+    events?: {
+        [N:string]: (event: Event) => void;
     };
 };

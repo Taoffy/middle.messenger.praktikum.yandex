@@ -1,12 +1,13 @@
 import Handlebars from "handlebars";
 import { v4 as makeUUID } from "uuid";
-import { isEqual } from "../../common/is-equal";
+import { Indexed } from "../../../types/common-types";
+import { isEqual } from "../../utils/is-equal";
 
 import { EventBus } from "../EventBus/EventBus";
 
 import { EVENTS, BUBLING_EVENTS, TObjectEvents, TRecordProps } from "./types";
 
-abstract class Block<TProps extends object> {
+class Block<TProps extends object> {
     protected _element: HTMLElement;
     protected _meta: { tagName: string; props: unknown };
     protected eventBus: () => EventBus;
@@ -21,7 +22,7 @@ abstract class Block<TProps extends object> {
      *
      * @returns {void}
      */
-    constructor(tagName = "div", rawProps: TRecordProps<unknown>) {
+    constructor(tagName = "div", rawProps: TRecordProps<unknown> = {}) {
         const eventBus = new EventBus();
         const { props, children } = this._getChildren(rawProps);
         const requireId = (props.settings as {[N: string]: boolean})?.witnInternalID;
@@ -33,8 +34,8 @@ abstract class Block<TProps extends object> {
         
         this._element =  document.createElement('div');
         this._id = requireId ? makeUUID() : null;
-        this._children = this._makePropsProxy(children) as {[N: string]: Block<TProps>};
-        this.props = this._makePropsProxy({...props, _id: this._id}) as TProps;
+        this._children = this._makePropsProxy(children, true) as {[N: string]: Block<TProps>};
+        this.props = this._makePropsProxy({...props, _id: this._id}, false) as TProps;
 
         this.eventBus = () => eventBus;
 
@@ -62,13 +63,21 @@ abstract class Block<TProps extends object> {
     }
 
     protected _componentDidMount() {
-        this.componentDidMount();
-        Object.values(this._children).forEach(child => { 
-            child.componentDidMount(); 
+        Object.values(this._children).forEach(child => {
+          if (Array.isArray(child)) {
+              child.forEach((item) => {
+                  item.dispatchComponentDidMount();
+              });
+          } else {
+              child.dispatchComponentDidMount(); 
+          }
+            
         });
+
+        this.componentDidMount();
     }
 
-    public componentDidMount() {}
+    public componentDidMount(): void {}
 
     public dispatchComponentDidMount() {
         this.eventBus().emit(EVENTS.FLOW_CDM);
@@ -90,21 +99,29 @@ abstract class Block<TProps extends object> {
         return true;
     }
 
-    public setProps = (nextProps: TProps) => {
+    public setProps<T>(nextProps: TRecordProps<T>) {
         if (!nextProps) {
           return;
         }
 
-        Object.assign(this.props, nextProps);
-    };
+        const { props, children } = this._getChildren(nextProps);
+
+        if (Object.values(props).length) {
+            Object.assign(this.props, nextProps);
+        }
+
+        if (Object.values(children).length) {
+            Object.assign(this._children, children);
+        }
+    }
 
     get element() {
         return this._element;
     }
 
-    protected _compile<T>(template: string, props : TRecordProps<T>) {
+    protected _compile(template: string, props : Indexed) {
         if (typeof props === undefined) {
-            props = this.props as TRecordProps<T>;
+            props = this.props;
         }
 
         const compileProps = {...props};
@@ -134,8 +151,7 @@ abstract class Block<TProps extends object> {
         return fragment.content;
     }
 
-    protected _makePropsProxy<T>(props: TRecordProps<T>) {
-
+    protected _makePropsProxy<T>(props: TRecordProps<T>, isChildren: boolean) {
         return new Proxy(props, {
             get: (target, prop: string) => {
                 const value = target[prop];
@@ -150,8 +166,13 @@ abstract class Block<TProps extends object> {
                 this.eventBus().emit(EVENTS.FLOW_CDU, oldProps, target);
                 return true;
             },
-            deleteProperty() {
-                throw new Error("Нет доступа");
+            deleteProperty(target, prop) {
+                if (!isChildren) {
+                    throw new Error("Нет доступа");
+                } else {
+                    delete target[prop as string];
+                    return true;
+                }
             }
         });
     }
@@ -195,6 +216,11 @@ abstract class Block<TProps extends object> {
         const props: TRecordProps<T> = {};
 
         Object.entries(propsAndChildren).forEach(([key, value]) => {
+            if (this._children && this._children[key] && value === undefined) {
+                delete this._children[key];
+                return;
+            }
+            
             if (value instanceof Block) {
                 children[key] = value;
             } else if (Array.isArray(value)) {
@@ -222,14 +248,15 @@ abstract class Block<TProps extends object> {
         this._addEventListeners();
     }
 
-    abstract render(): DocumentFragment
+    //@ts-ignore
+    public render(): DocumentFragment {}
 
     getContent() {
         return this.element;
     }
 
     public show() {
-        this.getContent().style.display = "block";
+        this.getContent().style.display = "flex";
     }
 
     public hide() {
