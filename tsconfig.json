@@ -9,6 +9,10 @@
     "sourceMap": true,         
     "outDir": "./dist",          
 
+    "types": [
+        "node"
+    ],
+
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
