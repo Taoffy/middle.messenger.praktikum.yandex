@@ -3,7 +3,7 @@
     "skipLibCheck": true,
     
     "target": "ES2021",
-    "module": "commonjs",
+    "module": "CommonJS",
     "jsx": "react",
     "declaration": false,
     "sourceMap": true,         

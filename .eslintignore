@@ -1,2 +1,5 @@
 /dist
 /node-node_modules
+webpack.config.js
+postcss.config.js
+/tests

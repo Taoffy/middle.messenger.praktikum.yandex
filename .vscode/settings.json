@@ -1,5 +1,7 @@
 {
   "files.associations": {
     "*.css": "postcss"
-  }
+  },
+  "prettier.requireConfig": true,
+  "editor.formatOnSave": false
 }
