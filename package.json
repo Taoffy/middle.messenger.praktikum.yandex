@@ -4,7 +4,7 @@
   "description": "This is a training project for yandex praktikum, messenger with various functions.",
   "browserslist": ">0.2%, not dead, not op_mini all",
   "scripts": {
-    "start": "cross-env PORT=3000 NODE_ENV=development parcel build src/pages/index.html --no-cache && node ./server.js",
+    "start": "npm run build && node ./server.js ",
     "dev": "cross-env PORT=3000 NODE_ENV=development ./node_modules/.bin/webpack --config webpack.config.js --watch",
     "build": "cross-env PORT=3000 NODE_ENV=production ./node_modules/.bin/webpack --config webpack.config.js",
     "server": "cross-env NODE_ENV=development webpack-dev-server --mode development",
