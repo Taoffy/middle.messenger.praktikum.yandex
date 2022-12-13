@@ -1,7 +1,7 @@
 import { assert } from "chai";
 import { Block } from "./Block";
 
-class MockClass extends Block<any> {
+class MockClass extends Block<{text: string}> {
     constructor(tagName = "div", props: {text: string}) {
         super(tagName, props);
     }

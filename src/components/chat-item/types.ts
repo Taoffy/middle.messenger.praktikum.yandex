@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export type TChatItem = {
     avatarSrc?: string;
     defaultSrc: string;
