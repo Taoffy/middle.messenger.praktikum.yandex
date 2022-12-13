@@ -14,12 +14,12 @@
     "lint:ts": "eslint ."
   },
   "lint-staged": {
-    "*.ts": "eslint",
-    ".css": "stylelint"
+    "*.ts": "eslint .",
+    ".css": "stylelint '**/*.css'"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm-run-all test lint:all"
+      "pre-commit": "lint-staged --relative"
     }
   },
   "repository": {
