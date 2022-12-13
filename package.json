@@ -17,11 +17,6 @@
     "*.ts": "eslint .",
     ".css": "stylelint '**/*.css'"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged --relative"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Taoffy/middle.messenger.praktikum.yandex.git"
