@@ -4,6 +4,7 @@ import { ProfileInput } from "../profile-input/profile-input";
 import { Link } from "../link/link";
 import { AvatarInput } from "../avatar-input/avatar-input";
 
+/* eslint-disable no-unused-vars */
 export type TForm = {
     isProfileForm?: boolean;
     button?: Button;

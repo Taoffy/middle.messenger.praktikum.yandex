@@ -77,6 +77,7 @@ class Block<TProps extends object> {
         this.componentDidMount();
     }
 
+    // eslint-disable-next-line no-empty-function, @typescript-eslint/no-empty-function
     public componentDidMount(): void {}
 
     public dispatchComponentDidMount() {
@@ -248,7 +249,9 @@ class Block<TProps extends object> {
         this._addEventListeners();
     }
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     //@ts-ignore
+    // eslint-disable-next-line no-empty-function, @typescript-eslint/no-empty-function
     public render(): DocumentFragment {}
 
     getContent() {

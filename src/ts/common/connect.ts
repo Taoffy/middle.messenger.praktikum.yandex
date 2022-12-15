@@ -4,6 +4,7 @@ import { Indexed } from "../../types/common-types";
 import { store, STORE_EVENTS } from "../../store/Store";
 import { isEqual } from "../utils/is-equal";
 
+// eslint-disable-next-line no-unused-vars
 export function connect(Component: typeof Block, mapStateToProps: (state: Indexed) => Indexed) {
     return class extends Component<Indexed> {
         constructor(tagName: string, props: Indexed) {

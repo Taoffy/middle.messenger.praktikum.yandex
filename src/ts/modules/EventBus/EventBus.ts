@@ -7,6 +7,7 @@ export class EventBus implements IEventBus  {
       this.listeners = {};
   }
 
+  // eslint-disable-next-line no-unused-vars
   on<T>(event: string, callback: (...args: T[]) => void) {
     if (!this.listeners[event]) {
       this.listeners[event] = [];
@@ -15,6 +16,7 @@ export class EventBus implements IEventBus  {
     this.listeners[event].push(callback);
   }
 
+  // eslint-disable-next-line no-unused-vars
   off<T>(event: string, callback: (...args: T[]) => void) {
 		if (!this.listeners[event]) {
       throw new Error(`Нет события: ${event}`);

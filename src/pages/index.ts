@@ -11,17 +11,19 @@ import { Router } from "../ts/modules/Router/Router";
 
 import { routes } from "../ts/utils/routes";
 
+import "../css/main.css";
+
 const router = new Router("#root");
 
 router
-    .use(routes.login, LoginPage)
-    .use(routes[404], Page404)
-    .use(routes[500], Page500)
-    .use(routes.chats, ChatsPage)
-    .use(routes.editProfile, EditProfilePage)
-    .use(routes.profile, ProfilePage)
-    .use(routes.signup, SignupPage)
-    .use(routes.changePassword, ChangePasswordPage);
+  .use(routes.login, LoginPage)
+  .use(routes[404], Page404)
+  .use(routes[500], Page500)
+  .use(routes.chats, ChatsPage)
+  .use(routes.editProfile, EditProfilePage)
+  .use(routes.profile, ProfilePage)
+  .use(routes.signup, SignupPage)
+  .use(routes.changePassword, ChangePasswordPage);
 
 router.start();
 
